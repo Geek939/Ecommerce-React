@@ -1,6 +1,6 @@
 export const changeDateFormat = (oldFormat) => {
 
-    const newDate= new Date (oldFormat)
+    const newDate= new Date (oldFormat).getTime()
     const options = {
         year: "numeric",
         month: "long",
