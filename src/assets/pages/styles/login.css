@@ -16,4 +16,25 @@
     background-color: white;
     padding: 20px;
     border-radius: 10px;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.login__loged-icon{
+    font-size: 100px;
+}
+
+.login__loged-btn{
+    border: none;
+    background-color: var(--color-red);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login__title{
+    text-align: start;
+    font-size: 23px;
+    
 }
