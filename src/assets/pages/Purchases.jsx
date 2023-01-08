@@ -13,7 +13,9 @@ const Purchases = () => {
   useEffect(() => {
     const URL="https://e-commerce-api.academlo.tech/api/v1/purchases"
     axios.get(URL, getConfig())
-    .then(res=> setPurchases(res.data.data.purchases))
+    .then(res=> {
+      const newPurchase = res.data.data.purchases.sort((a, b)=> new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+      setPurchases(res.data.data.purchases)})
     .catch(err=>console.log(err))
   
   
