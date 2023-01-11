@@ -3,9 +3,10 @@
     border-radius: 10px;
     overflow: hidden;
     width: 100%;
-    padding: 20px 30px;
+    padding: 20px 20px;
     position: relative;
     cursor: pointer;
+  
 }
 
 .productCard hr{
@@ -46,6 +47,7 @@
 .productCard__header:hover .productCard__header-img2{
 opacity: 1;
 }
+
 
 .productCard__title-price{
     color: var(--color-grayy-);
