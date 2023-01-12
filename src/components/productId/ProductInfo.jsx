@@ -3,8 +3,13 @@ import { useDispatch } from 'react-redux'
 import { addProductCart } from '../../store/slices/cart.slice'
 import "./styles/Productinfo.css"
 
+
+const positionImages = ["first", "second", "third"]
+
 const ProductInfo = ({product}) => {
     const [quantity, setQuantity] = useState(1)
+
+    const [currentImage, setCurrentImage] = useState(0)
 
     const dispatch = useDispatch()
 
@@ -28,12 +33,31 @@ const ProductInfo = ({product}) => {
 
     }
 
+    const handleClickLeft = () => {
+        const newValue = currentImage - 1
+        if (newValue >= 0) return setCurrentImage(newValue)
+    }
+
+    const handleClickRight = () => {
+        const newValue = currentImage + 1
+        if (newValue <= 2) return setCurrentImage(newValue)
+
+    }
+
+
+
+
   return (
     <article className='productInfo'>
-        <div className='productInfo__img'>
+        <div className='productInfo__slider'>
+            <div className={`productInfo__slider-container ${positionImages[currentImage]}`}>
             <img src={product?.productImgs[0]} alt="" />
+            <img src={product?.productImgs[1]} alt="" />
+            <img src={product?.productImgs[2]} alt="" />
         </div>
-        
+        <i onClick={handleClickLeft}  class='productInfo__slider-arrowLeft bx bxs-left-arrow'></i>
+        <i onClick={handleClickRight} class='productInfo__slider-arrowRight bx bxs-right-arrow'></i>
+        </div>
         <div>
         <h2 className='productInfo__title'>{product?.title}</h2>
         <p className='pruductInfo__description'>{product?.description}</p>
