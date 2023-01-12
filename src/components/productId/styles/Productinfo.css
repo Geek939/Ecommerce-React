@@ -11,6 +11,7 @@
 .productInfo__slider-container{
     display: flex;
     width: 300%;
+    transition: transform 300ms ease;
 }
 
 .productInfo__slider-container.first{

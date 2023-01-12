@@ -35,12 +35,24 @@ const ProductInfo = ({product}) => {
 
     const handleClickLeft = () => {
         const newValue = currentImage - 1
-        if (newValue >= 0) return setCurrentImage(newValue)
+        if (newValue >= 0){
+            setCurrentImage(newValue)
+        } 
+        else 
+        {
+            setCurrentImage(positionImages.lenght - 1)
+        }
     }
 
     const handleClickRight = () => {
         const newValue = currentImage + 1
-        if (newValue <= 2) return setCurrentImage(newValue)
+        if (newValue <= 2){
+            setCurrentImage(newValue)
+        } 
+        else
+        {
+            setCurrentImage(0)
+        }
 
     }
 
