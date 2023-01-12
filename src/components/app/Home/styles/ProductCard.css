@@ -6,6 +6,8 @@
     padding: 20px 20px;
     position: relative;
     cursor: pointer;
+    box-sizing: border-box;
+    margin-top: 10px;
   
 }
 
